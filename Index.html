@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" id="pagestyle" type="text/css" href="css/Dark.css">
+	<link rel="icon" type="image/icon" href="images/calculator.png">
+	<script src="js/Script.js"></script>
+	<title>Body fat Calculator</title>
+</head>
+<body>
+	<header id="nav-container">
+		<section class="button" tabindex="0">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</section>
+		<nav id="nav-content" tabindex="0">
+			<ul>
+				<li>
+					<h3>System</h3>
+				</li>
+				<li>
+					<input type="radio" name="system" id="metric" checked onchange="Metric()"/>
+					<label>Metric</label>				
+				</li>
+				<li>
+					<input type="radio" name="system" id="usa" value="usa" onchange="USA()"/>
+					<label>US</label>				
+				</li>
+				<li>
+					<h3>Appearance</h3>
+				</li>
+				<li>
+					<input type="radio" name="mode" id="dark" value="dark" checked onchange="swapStyleSheet('css/Dark.css')"/>
+					<label for="dark">Dark mode</label>
+				</li>
+				<li>
+					<input type="radio" name="mode" id="light" value="light" onchange="swapStyleSheet('css/Light.css')"/>
+					<label for="light">Light mode</label>
+				</li>
+			</ul>
+		</nav>
+    </header>
+	<section id="container">
+		<section id="form">
+			<table>
+				<tr id="gender">
+					<td>
+						<label>Gender</label>
+					</td>
+					<td>
+							<input type="radio" id="female" name="gender" value="female" checked onclick="Show()"/>
+							<label for="female">Female</label>
+							<input type="radio" id="male" name="gender" value="male" onclick="Hide()"/>
+							<label for="male">Male</label>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="weight">Weight</label></td>
+					<td><input type="number" id="weight" placeholder="kg"/></td>
+				</tr>
+				<tr>
+					<td><label for="height">Height</label></td>
+					<td>
+						<input type="number" id="height" placeholder="cm"/>
+						<input type="number" id="height2" placeholder="in"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="waist">Waist</label></td>
+					<td><input type="number" id="waist" placeholder="cm"/></td>
+				</tr>
+				<tr id="trHip">
+					<td><label for="hip">Hip</label></td>
+					<td><input type="number" id="hip" placeholder="cm"/></td>
+				</tr>
+				<tr>
+					<td><label for="neck">Neck</label></td>
+					<td><input type="number" id="neck" placeholder="cm"/></td>
+				</tr>
+			</table>
+			<button id="btn" onclick="Calculate()">Calculate</button>
+		</section>
+		<article id="article">
+			<h2>Body Fat Percentage</h2>
+			<p>
+				is the percentage of your weight that is made up of fat.
+				It consists of both storage body fat and essential body fat.
+			</p>
+			<p>
+				Body fat serves as an energy store, a padding against mechanical
+				impacts, a coating against heat loss, a construction material
+				for tissues and organs, and as a carrier substance for vitamins
+				and other important components of metabolism, just to name a few.
+			</p>
+		</article>
+		<table id="results-container">
+			<tr>
+				<td>
+					<h3 id="results"></h3>
+					<p id="bodyfat"></p>
+					<p id="fatmass"></p>
+					<p id="leanmass"></p>
+					<p id="bodyfatcategory"></p>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<footer class="menu">
+		<div class="label">Follow Me</div>
+		<div class="spacer"></div>
+		<div class="item"><a href="https://www.facebook.com/sotiris.karagiannis95/">Facebook</a></div>
+		<div class="item"><a href="https://www.instagram.com/sotiris_kar/">Instagram</a></div>
+		<div class="item"><a href="https://www.linkedin.com/in/sotiris-karagiannis-b6794b195/">LinkedIN</a></div>
+	</footer>
+</body>
+</html>
